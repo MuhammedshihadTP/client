@@ -70,6 +70,7 @@ const SignupForm = ({ open, onClose }) => {
                 </Box>
             </DialogContent>
         </Dialog>
+        
     );
 };
 
