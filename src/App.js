@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useState } from 'react';
+
+import { Button } from '@mui/material';
+import SignupForm from './components/SignupForm';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
+    return (
+        <div className="App">
+            <Button variant="contained" color="primary" onClick={openModal}>
+                Sign Up
+            </Button>
+            <SignupForm open={isModalOpen} onClose={closeModal} />
+        </div>
+    );
 }
 
 export default App;
